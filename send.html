@@ -8,6 +8,15 @@
     <meta charset="utf-8"/>
     <link rel="shortcut icon" href="images/favicon.ico" /> 
     <title>Send</title>
+    <script type = "text/javascript" >
+
+   function preventBack(){window.history.forward();}
+
+    setTimeout("preventBack()", 0);
+
+    window.onunload=function(){null};
+
+</script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="" name="description"/>
@@ -36,7 +45,7 @@
 
             <ul class="nav navbar-top-links navbar-right">
                 
-                <!-- /.dropdown -->
+                
                 <li class="dropdown">
                    <form action="logout.php" method="POST">
                     <button class="dropdown-toggle" data-toggle="dropdown" style="margin-top:0.5em">
@@ -44,9 +53,9 @@
                     </button>
                 </form>
 
-                    <!-- /.dropdown-user -->
+                   
                 </li>
-                <!-- /.dropdown -->
+              
             </ul>
             <!-- /.navbar-top-links -->
 
@@ -57,7 +66,7 @@
                        <br>
                        <li></li>
                          <li>
-                            <a href="index.html"><i class="fa fa-edit fa-fw"></i> Home</a>
+                            <a href="home.html"><i class="fa fa-edit fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="send.html"><i class="fa fa-dashboard fa-fw"></i> Send </a>
@@ -70,8 +79,6 @@
                             <a href="search.html"><i class="fa fa-table fa-fw"></i> Search</a>
                         </li>
                        
-                        <li>
-                            <a href="#"><i class="fa fa-file-word-o fa-fw"></i> View Reports<span class="fa arrow"></span></a> </li>
                         
                     </ul>
                 </div>

@@ -86,7 +86,7 @@ if (mysqli_num_rows($query) > 0) {
 
 if ($info_flag==1 && $mvmt_flag==1) {
 	Print '<script>alert("You successfully sent the file titled: ".$sub." with reference number ".$id." to ".$to_dept.".");</script>'; 
-	//Print '<script>window.location.assign("index.html");</script>';
+	//Print '<script>window.location.assign("home.html");</script>';
 } else {
 	Print '<script>alert("File sending failed. Please try again!");</script>'; 
 	//Print '<script>window.location.assign("send_file.html");</script>';

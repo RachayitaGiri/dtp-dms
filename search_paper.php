@@ -15,6 +15,15 @@ session_start();
 	<meta charset="utf-8"/>
     <link rel="shortcut icon" href="images/favicon.ico" /> 
 	<title>Search Paper</title>
+    <script type = "text/javascript" >
+
+   function preventBack(){window.history.forward();}
+
+    setTimeout("preventBack()", 0);
+
+    window.onunload=function(){null};
+
+</script>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1" name="viewport"/>
 	<meta content="" name="description"/>
@@ -63,7 +72,7 @@ session_start();
                        <br>
                        <li></li>
                          <li>
-                            <a href="index.html"><i class="fa fa-edit fa-fw"></i> Home</a>
+                            <a href="home.html"><i class="fa fa-edit fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="send.html"><i class="fa fa-dashboard fa-fw"></i> Send </a>
@@ -76,8 +85,6 @@ session_start();
                             <a href="search.html"><i class="fa fa-table fa-fw"></i> Search</a>
                         </li>
                        
-                        <li>
-                            <a href="#"><i class="fa fa-paper-word-o fa-fw"></i> View Reports<span class="fa arrow"></span></a> </li>
                         
                     </ul>
                 </div>

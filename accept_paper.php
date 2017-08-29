@@ -31,7 +31,7 @@ $sql2 = "UPDATE paper_movement SET paper_to_dt='$timestamp', paper_to_emp_id='$e
 	if ($result=mysqli_query($conn,$sql2))
  	{
 Print '<script>alert("Successfully Received the paper!");</script>'; //Prompts the user
-			Print '<script>window.location.assign("index.html");</script>';
+			Print '<script>window.location.assign("home.html");</script>';
 
   	}
   	else
