@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "dms");
+$conn = mysqli_connect("localhost", "root", "anonymous001", "dms");
 //Check connection
 if(!$conn) 
 {

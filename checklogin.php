@@ -15,12 +15,12 @@ include 'conn.php';
   		if(mysqli_num_rows($result) > 0)
 		  {
 		  	$_SESSION['user'] = $username;
-		  	header("location: index.html");
+		  	header("location: home.html");
 		  }
 		else
 		  {
 		  	Print '<script>alert("Incorrect Username or Password!");</script>'; //Prompts the user
-			Print '<script>window.location.assign("login.html");</script>';
+			Print '<script>window.location.assign("index.html");</script>';
 		  }
 
      	mysqli_free_result($result);

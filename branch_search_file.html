@@ -8,6 +8,15 @@
     <meta charset="utf-8"/>
     <link rel="shortcut icon" href="images/favicon.ico" /> 
     <title>Branch Search</title>
+    <script type = "text/javascript" >
+
+   function preventBack(){window.history.forward();}
+
+    setTimeout("preventBack()", 0);
+
+    window.onunload=function(){null};
+
+</script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="" name="description"/>
@@ -56,7 +65,7 @@
                        <br>
                        <li></li>
                          <li>
-                            <a href="index.html"><i class="fa fa-edit fa-fw"></i> Home</a>
+                            <a href="home.html"><i class="fa fa-edit fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="send.html"><i class="fa fa-dashboard fa-fw"></i> Send </a>
@@ -69,8 +78,6 @@
                             <a href="search.html"><i class="fa fa-table fa-fw"></i> Search</a>
                         </li>
                        
-                        <li>
-                            <a href="#"><i class="fa fa-file-word-o fa-fw"></i> View Reports<span class="fa arrow"></span></a> </li>
                         
                     </ul>
                 </div>
@@ -90,19 +97,18 @@
         <form role="form" action="branch_search_file.php" method="POST">
                 <div class="form-group" style="display:inline-block;">
                 <label>Select branch:</label>
-                <select id="branch" name="branch" class="form-control">
-                    <option>DCP/T-North</option>
-                    <option>Spl.CP/Traffic</option>
+                <select class="form-control" name="f_to_dept" required>
+                                    <option>Spl.CP/Traffic</option>
                                     <option>Jt.CP/Traffic</option>
                                     <optgroup label="Addl.CP/Traffic">
-
-                                        <option>ACP/T-HQ</option>
-                                    
-                                        <option>ACP/T-CR/SR</option>
-                                        <option>ACP/T-WR/OR</option>
-                                        <option>ACP/T-ER/North</option>
+                                        <option>Addl.CP/T-CR/SR</option>
+                                        <option>Addl. CP HQ</option>
+                                        <option>Addl.CP/T-WR/OR</option>
+                                        <option>Addl.CP/T-ER/North</option>
                                     </optgroup>
                                     <optgroup label="DCsP/T">
+                                        <option>DCP/HQ I</option>
+                                        <option>DCP/HQ II</option>
                                         <option>DCP/T-North Range</option>
                                         <option>DCP/T-Outer Range</option>
                                         <option>DCP/T-Western Range</option>
@@ -174,6 +180,7 @@
                                         <option>Notice Branch & Process Branch</option>
                                         <option>Printing</option>
                                     </optgroup>
+                                    <option>PIU Branch</option>
                                     <option>RI/TODAPUR</option>
                                     <option>INSP. ADMN.</option>
                                     <option>SIP Branch</option>
@@ -182,7 +189,10 @@
                                     <option>CARE TAKER</option>
                                     <option>I/C Canteen</option>
                                     <option>Care Taker(Teen Murti line)</option>
-                </select>
+                                    
+                                    
+
+                                </select>
                 </div>
 
 

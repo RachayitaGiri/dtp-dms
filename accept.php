@@ -28,7 +28,7 @@ $sql2 = "UPDATE file_movement SET file_to_dt='$timestamp', file_to_emp_id='$emp_
 	if ($result=mysqli_query($conn,$sql2))
  	{
 Print '<script>alert("Successfully Received the file!");</script>'; //Prompts the user
-			Print '<script>window.location.assign("index.html");</script>';
+			Print '<script>window.location.assign("home.html");</script>';
 
   	}
   	else

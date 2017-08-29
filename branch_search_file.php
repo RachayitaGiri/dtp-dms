@@ -15,6 +15,15 @@ session_start();
 	<meta charset="utf-8"/>
     <link rel="shortcut icon" href="images/favicon.ico" /> 
 	<title>Branchwise Search</title>
+    <script type = "text/javascript" >
+
+   function preventBack(){window.history.forward();}
+
+    setTimeout("preventBack()", 0);
+
+    window.onunload=function(){null};
+
+</script>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1" name="viewport"/>
 	<meta content="" name="description"/>
@@ -63,7 +72,7 @@ session_start();
                        <br>
                        <li></li>
                          <li>
-                            <a href="index.html"><i class="fa fa-edit fa-fw"></i> Home</a>
+                            <a href="home.html"><i class="fa fa-edit fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="send.html"><i class="fa fa-dashboard fa-fw"></i> Send </a>
@@ -76,8 +85,6 @@ session_start();
                             <a href="search.html"><i class="fa fa-table fa-fw"></i> Search</a>
                         </li>
                        
-                        <li>
-                            <a href="#"><i class="fa fa-file-word-o fa-fw"></i> View Reports<span class="fa arrow"></span></a> </li>
                         
                     </ul>
                 </div>
@@ -124,6 +131,11 @@ $user = $_SESSION['user'];
 $s_no = 1;
 
 $branch_name = $_POST["branch"];
+ 
+$branch = mysqli_query($conn, "SELECT branch_code FROM login_details WHERE username = '$user'");
+while ($row = mysqli_fetch_array($branch)) {
+    $dept = $row['branch_code'];
+}
 
 $sql = "SELECT * from file_master_info where file_origin_dept = '$branch_name'";
 $result=mysqli_query($conn,$sql);
@@ -139,7 +151,7 @@ if (mysqli_num_rows($result) > 0)
         <form role="form" action="file_details.php?id=<?php echo $id ?>" method="POST">
         <tr>
 			<td><?php echo $s_no; ?></td>
-			<td><?php echo $row['file_ref_id']; ?></td>
+			<td><?php echo "DTP/".$dept."/".$row['file_ref_id']; ?></td>
 			<td><?php echo $row['file_subject']; ?></td>
 			<td><?php echo $row['file_origin_dt']; ?></td>
 			<td><input type="submit" name="submit" class="btn btn-primary    btn-xs   " value="View"> 
@@ -196,6 +208,11 @@ $user = $_SESSION['user'];
 $s_no = 1;
 
 $branch_name = $_POST["branch"];
+ 
+$branch = mysqli_query($conn, "SELECT branch_code FROM login_details WHERE username = '$user'");
+while ($row = mysqli_fetch_array($branch)) {
+    $dept = $row['branch_code'];
+}
 
 $sql = "SELECT * from file_movement where file_to_dept = '$branch_name'";
 $result=mysqli_query($conn,$sql);
@@ -211,7 +228,7 @@ if (mysqli_num_rows($result) > 0)
         <form role="form" action="file_details.php?id=<?php echo $id ?>" method="POST">
         <tr>
 			<td><?php echo $s_no; ?></td>
-			<td><?php echo $row['file_ref_id']; ?></td>
+			<td><?php echo "DTP/".$dept."/".$row['file_ref_id']; ?></td>
 			<td><?php echo $row['file_subject']; ?></td>
             <td><?php echo $row['file_from_dept']; ?></td>
 			<td><?php echo $row['file_from_dt']; ?></td>

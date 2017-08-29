@@ -67,7 +67,7 @@ if (mysqli_num_rows($query) > 0) {
 if ($GLOBALS['info_flag'] ==1 && $GLOBALS['mvmt_flag'] ==1) {
 
 	Print '<script>alert("You successfully sent the paper!");</script>'; 
-	Print '<script>window.location.assign("index.html");</script>';
+	Print '<script>window.location.assign("home.html");</script>';
 } else {
 	Print '<script>alert("Paper sending failed. Please try again!");</script>'; 
 	Print '<script>window.location.assign("send_paper_gd.html");</script>';

@@ -20,6 +20,9 @@ function insert_movement(&$conn,&$id,&$sub,&$from_dept,&$from_emp_id,&$to_dept,&
 	$result = mysqli_query($conn,$query); 
 
 	$sql = "INSERT INTO `file_movement` (`file_ref_id`, `file_subject`, `file_from_dept`, `file_from_emp_id`, `file_to_dept`, `file_nop`, `file_hop_num`, `file_remarks`) VALUES ('$id','$sub','$from_dept','$from_emp_id','$to_dept','$nop','$hop','$rmrk')";
+	
+	//$sql = "INSERT INTO file_movement (file_ref_id, file_subject, file_from_dept, file_from_emp_id, file_to_dept, file_nop, file_hop_num, file_remarks) VALUES ('$id','$sub','$from_dept','$from_emp_id','$to_dept','$nop','$hop','$rmrk')";
+
 	//$sqli = "INSERT INTO `file_movement` (`file_ref_id`, `file_subject`, `file_from_dt`, `file_from_dept`, `file_from_emp_id`, `file_to_dt`, `file_to_dept`, `file_to_emp_id`, `file_nop`, `file_hop_num`, `file_remarks`) VALUES ('54657', 'hello', CURRENT_TIMESTAMP, 'DCP/T-North', '647', '2017-07-11', 'ACP', 'NULL', '7', '1', 'none')";
 	$result = mysqli_query($conn,$sql);
 	if (!$result) {
@@ -99,10 +102,10 @@ if($flag==1)
 
 	if ($info_flag==1 && $mvmt_flag==1) {
 		Print '<script>alert("You successfully sent the file.");</script>'; 
-		//Print '<script>window.location.assign("index.html");</script>';
+		Print '<script>window.location.assign("home.html");</script>';
 	} else {
 		Print '<script>alert("File sending failed. Please try again!");</script>'; 
-		//Print '<script>window.location.assign("send_file.html");</script>';
+		Print '<script>window.location.assign("send_file.html");</script>';
 	}
 }
 else
